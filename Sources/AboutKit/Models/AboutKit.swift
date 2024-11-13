@@ -31,7 +31,7 @@ struct AboutKit {
         return "\n\n\nDEBUG DETAILS\n\n\(versionDetails)\n\(osDetails)\n\(deviceDetails)\n\(environmentDetails)"
     }()
 
-    #elseif os(macOS)
+    #elseif os(macOS) || targetEnvironment(macCatalyst)
 
     /// Returns a `String` containing the identifier of the current device, e.g. MacBook Pro 13,1
     private static let deviceType: String = {
