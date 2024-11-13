@@ -47,6 +47,8 @@ struct AboutKit {
         let deviceDetails = "Device: \(deviceType)"
         let environmentDetails = "Environment: \(Bundle.main.userType.title)"
 
+        print("\n\n\nDEBUG DETAILS\n\n\(versionDetails)\n\(osDetails)\n\(deviceDetails)\n\(environmentDetails)")
+
         return "\n\n\nDEBUG DETAILS\n\n\(versionDetails)\n\(osDetails)\n\(deviceDetails)\n\(environmentDetails)"
     }()
 
@@ -60,6 +62,8 @@ struct AboutKit {
         let osDetails = "OS Version: \(ProcessInfo.processInfo.operatingSystemVersionString)"
         let deviceDetails = "Device: \(ProcessInfo().isiOSAppOnMac ? "Mac" : UIDevice.current.deviceType)"
         let environmentDetails = "Environment: \(Bundle.main.userType.title)"
+
+        print("\n\n\nDEBUG DETAILS\n\n\(versionDetails)\n\(osDetails)\n\(deviceDetails)\n\(environmentDetails)")
 
         return "\n\n\nDEBUG DETAILS\n\n\(versionDetails)\n\(osDetails)\n\(deviceDetails)\n\(environmentDetails)"
     }()
