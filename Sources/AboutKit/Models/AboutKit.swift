@@ -57,7 +57,7 @@ struct AboutKit {
         let buildNumber = Bundle.main.buildNumber
         let versionDetails = "App Version: \(versionNumber) (\(buildNumber))"
 
-        let osDetails = "OS Version: \(UIDevice.current.systemVersion)"
+        let osDetails = "OS Version: \(ProcessInfo.processInfo.operatingSystemVersionString)"
         let deviceDetails = "Device: \(ProcessInfo().isiOSAppOnMac ? "Mac" : UIDevice.current.deviceType)"
         let environmentDetails = "Environment: \(Bundle.main.userType.title)"
 
