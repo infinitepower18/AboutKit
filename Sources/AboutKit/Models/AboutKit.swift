@@ -10,6 +10,7 @@ import AppKit
 import IOKit
 #else
 import UIKit
+import IOKit
 #endif
 
 @MainActor
