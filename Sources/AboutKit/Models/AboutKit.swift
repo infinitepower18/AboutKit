@@ -17,7 +17,7 @@ struct AboutKit {
 
     private init() {}
 
-    #if os(macOS)
+    #if os(macOS) || targetEnvironment(macCatalyst)
 
     /// Returns a `String` containing the identifier of the current device, e.g. MacBook Pro 13,1
     private static let deviceType: String = {
