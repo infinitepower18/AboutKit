@@ -17,9 +17,7 @@ struct AboutKit {
 
     private init() {}
 
-    #if os(macOS) || targetEnvironment(macCatalyst)
-
-    /// Returns a `String` containing the identifier of the current device, e.g. MacBook Pro 13,1
+        /// Returns a `String` containing the identifier of the current device, e.g. MacBook Pro 13,1
     private static let deviceType: String = {
         let service = IOServiceGetMatchingService(
             kIOMainPortDefault,
@@ -36,6 +34,8 @@ struct AboutKit {
 
         return modelIdentifier ?? "Unknown"
     }()
+
+    #if os(macOS) || targetEnvironment(macCatalyst)
 
     /// A `String` containing debug details about the current app.
     static let debugDetails: String = {
@@ -57,8 +57,8 @@ struct AboutKit {
         let buildNumber = Bundle.main.buildNumber
         let versionDetails = "App Version: \(versionNumber) (\(buildNumber))"
 
-        let osDetails = "OS Version: \(UIDevice.current.systemVersion)"
-        let deviceDetails = "Device: \(ProcessInfo().isiOSAppOnMac ? "Mac" : UIDevice.current.deviceType)"
+        let osDetails = "OS Version: \(ProcessInfo.processInfo.operatingSystemVersionString)"
+        let deviceDetails = "Device: \(deviceType)"
         let environmentDetails = "Environment: \(Bundle.main.userType.title)"
 
         return "\n\n\nDEBUG DETAILS\n\n\(versionDetails)\n\(osDetails)\n\(deviceDetails)\n\(environmentDetails)"
