@@ -17,7 +17,7 @@ struct AboutKit {
 
     private init() {}
 
-    #if os(iOS) || os(visionOS)
+    #if (os(iOS) || os(visionOS)) && !targetEnvironment(macCatalyst)
     /// A `String` containing debug details about the current app.
     static let debugDetails: String = {
         let versionNumber = Bundle.main.versionNumber
